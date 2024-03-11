@@ -1,5 +1,5 @@
-from PySide6.QtWidgets import QGroupBox, QVBoxLayout, QTableWidget, QComboBox, QLineEdit, QTableWidgetItem
-
+from PySide6.QtWidgets import QGroupBox, QVBoxLayout, QTableWidget, QComboBox, QTableWidgetItem, QSpinBox
+from ..components import add_spinbox
 
 def pannel_people(self, layout):
     group = QGroupBox('People')
@@ -14,22 +14,22 @@ class DynamicTable:
         self.layout = QVBoxLayout()
 
         # Input field for the counter
-        self.counter_input = QLineEdit()
-        self.counter_input.setPlaceholderText('Enter a number...')
+        add_spinbox(self, self.layout, 'Number of Persons:', 'Define the number of persons in the household. If not predefined, enter 0.', 1, 20, 2, 'number_of_persons')
 
         # Table to display rows based on counter value
         self.table = QTableWidget()
-        # Now two columns: one for the row label, one for the selection
+        # set height
+        self.table.setFixedHeight(200)
         self.table.setColumnCount(2)
         self.table.setHorizontalHeaderLabels(['Row', 'Choice'])
-
-        self.layout.addWidget(self.counter_input)
         self.layout.addWidget(self.table)
 
-        self.counter_input.textChanged.connect(self.updateCounter)
+        # self.counter_input.textChanged.connect(self.updateCounter)
+        self.number_of_persons.valueChanged.connect(self.updateCounter)
+        self.updateCounter()
 
     def updateCounter(self):
-        counter_value = self.counter_input.text()
+        counter_value = self.number_of_persons.text()
         if counter_value.isdigit():
             self.updateTable(int(counter_value))
         else:
