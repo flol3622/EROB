@@ -1,28 +1,32 @@
-import sys
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QTableWidget, QTableWidgetItem, QComboBox
-from PySide6.QtCore import Slot
+from PySide6.QtWidgets import QGroupBox, QVBoxLayout, QTableWidget, QComboBox, QLineEdit, QTableWidgetItem
 
-class CounterApp(QWidget):
+
+def pannel_people(self, layout):
+    group = QGroupBox('People')
+    self.dynamic_table = DynamicTable() 
+    group_layout = self.dynamic_table.layout
+    group.setLayout(group_layout)
+    layout.addWidget(group)
+
+
+class DynamicTable:
     def __init__(self):
-        super().__init__()
-        self.initUI()
-
-    def initUI(self):
         self.layout = QVBoxLayout()
 
         # Input field for the counter
         self.counter_input = QLineEdit()
         self.counter_input.setPlaceholderText('Enter a number...')
-        self.counter_input.textChanged.connect(self.updateCounter)
-        self.layout.addWidget(self.counter_input)
 
         # Table to display rows based on counter value
         self.table = QTableWidget()
-        self.table.setColumnCount(2) # Now two columns: one for the row label, one for the selection
+        # Now two columns: one for the row label, one for the selection
+        self.table.setColumnCount(2)
         self.table.setHorizontalHeaderLabels(['Row', 'Choice'])
+
+        self.layout.addWidget(self.counter_input)
         self.layout.addWidget(self.table)
 
-        self.setLayout(self.layout)
+        self.counter_input.textChanged.connect(self.updateCounter)
 
     def updateCounter(self):
         counter_value = self.counter_input.text()
@@ -42,9 +46,3 @@ class CounterApp(QWidget):
         options = ['A', 'B', 'C']
         comboBox.addItems(options)
         self.table.setCellWidget(row, 1, comboBox)
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = CounterApp()
-    ex.show()
-    sys.exit(app.exec_())

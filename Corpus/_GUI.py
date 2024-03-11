@@ -11,11 +11,12 @@ class GUIApp(QWidget):
         main_layout = QVBoxLayout()
 
         # Setup groups for different settings
-        GUI.pannel_simulation(main_layout, self)
-        GUI.pannel_building(main_layout, self)
-        GUI.pannel_heating_occupancy(main_layout, self)
-        GUI.pannel_advanced(main_layout, self)
-        GUI.pannel_output(main_layout, self)
+        GUI.pannel_simulation(self, main_layout)
+        GUI.pannel_building(self, main_layout)
+        GUI.pannel_people(self, main_layout)
+        GUI.pannel_heating_occupancy(self, main_layout)
+        GUI.pannel_advanced(self, main_layout)
+        GUI.pannel_output(self, main_layout)
 
         self.setLayout(main_layout)
         self.setWindowTitle('Simulation Configuration')
