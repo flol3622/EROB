@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers-community/templates/tree/main/src/jupyter-datascience-notebooks
+{
+	"name": "Jupyter Data Science Notebooks",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/nvidia-cuda:1": {}
+	},
+	"overrideCommand": false,
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/opt/conda/bin/python",
+				"notebook.undoRedoPerCell": false
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-python.autopep8",
+				"GitHub.copilot",
+				"mhutchie.git-graph",
+				"esbenp.prettier-vscode"
+			]
+		}
+	},
+	"hostRequirements": {
+		"gpu": "optional"
+	},
+	"runArgs": ["--gpus","all"
+    ],
+	"postCreateCommand": "chmod +x ./.devcontainer/setup.sh && ./.devcontainer/setup.sh",
+	"remoteUser": "jovyan"
+}
