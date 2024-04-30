@@ -1,62 +1,19 @@
-## Astral-sh UV
+## Setup
+```bash	
+# controlled environment in folder
+conda create -p .venv python=3.8
+conda activate < path to \.venv>
 
-### Getting started
-
-```bash
-# On macOS and Linux.
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# On Windows.
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# With pip.
+# extremely fast package installer
 pip install uv
+uv pip install PySide6
+
+# unresolved packages
+pip install pyqt6-tools
 ```
 
-### Create virtual environment
-
+## Qt Designer
 ```bash
-uv venv  # Create a virtual environment at .venv.
-```
-
-### Activate virtual environment
-
-```bash
-# On macOS and Linux.
-source .venv/bin/activate
-
-# On Windows.
-.venv\Scripts\activate
-```
-
-# Install packages
-
-```bash
-uv pip install flask                # Install Flask.
-uv pip install -r requirements.txt  # Install from a requirements.txt file.
-uv pip install -e .                 # Install the current project in editable mode.
-uv pip install "package @ ."        # Install the current project from disk.
-uv pip install "flask[dotenv]"      # Install Flask with "dotenv" extra.
-```
-
-### Generate requirements.txt
-
-```bash
-uv pip freeze | uv pip compile - -o requirements.txt  # Lock the current environment.
-```
-
-### Use Python on HPC
-
-conda is preferred on HPC, but if you need to use uv:
-
-```bash
-module load Python
-
-source .venv/bin/activate
-# -- or --
-uv venv
-source .venv/bin/activate
-
-uv pip install -r requirements.txt
-python <script>.py
+# open Qt Designer once in the environment
+pyqt6-tools designer  
 ```
