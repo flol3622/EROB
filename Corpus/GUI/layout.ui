@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>417</width>
+    <width>465</width>
     <height>779</height>
    </rect>
   </property>
@@ -29,7 +29,7 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -492,6 +492,9 @@
          <property name="autoFillBackground">
           <bool>true</bool>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -506,8 +509,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>389</width>
-            <height>907</height>
+            <width>406</width>
+            <height>931</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -1176,7 +1179,7 @@
                </widget>
               </item>
               <item alignment="Qt::AlignTop">
-               <widget class="QFrame" name="">
+               <widget class="QFrame" name="frame">
                 <layout class="QFormLayout" name="formLayout_7">
                  <property name="leftMargin">
                   <number>20</number>
@@ -1676,7 +1679,8 @@
        <widget class="QLabel" name="label_16">
         <property name="font">
          <font>
-          <weight>50</weight>
+          <family>Source Sans 3</family>
+          <pointsize>9</pointsize>
           <bold>false</bold>
          </font>
         </property>

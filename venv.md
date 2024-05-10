@@ -1,12 +1,12 @@
 ## Setup
 ```bash	
-# controlled environment in folder
-conda create -p .venv python=3.8
-conda activate < path to \.venv>
+# controlled environment
+conda create -n erob python=3.8
+conda activate erob
 
 # extremely fast package installer
-pip install uv
-uv pip install PySide6
+pip install uv 
+uv pip install pyqt6-tools
 
 # unresolved packages
 pip install pyqt6-tools
