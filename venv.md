@@ -6,14 +6,11 @@ conda activate erob
 
 # extremely fast package installer
 pip install uv 
-uv pip install pyqt6-tools
-
-# unresolved packages
-pip install pyqt6-tools
+uv pip install pyqt6-tools PySide6
 ```
 
 ## Qt Designer
 ```bash
 # open Qt Designer once in the environment
-pyqt6-tools designer  
+pyqt6-tools designer .\Corpus\GUI\layout.ui
 ```
