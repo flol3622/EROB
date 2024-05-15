@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>455</width>
-    <height>792</height>
+    <width>743</width>
+    <height>835</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,6 +48,9 @@
            </property>
            <item row="0" column="0">
             <widget class="QLabel" name="label">
+             <property name="toolTip">
+              <string/>
+             </property>
              <property name="text">
               <string>Simulation length (in days)</string>
              </property>
@@ -121,7 +124,7 @@
            <item row="1" column="0">
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Dwelling type</string>
+              <string>Dwelling type *</string>
              </property>
             </widget>
            </item>
@@ -161,7 +164,7 @@
            <item row="2" column="0">
             <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>Year of construction/renovation</string>
+              <string>Year of construction/renovation *</string>
              </property>
             </widget>
            </item>
@@ -200,7 +203,7 @@
            <item row="3" column="0">
             <widget class="QLabel" name="label_6">
              <property name="text">
-              <string>Number of bedrooms</string>
+              <string>Number of bedrooms *</string>
              </property>
             </widget>
            </item>
@@ -236,7 +239,7 @@
            <item row="4" column="0">
             <widget class="QLabel" name="label_7">
              <property name="text">
-              <string>Ventilation system</string>
+              <string>Ventilation system *</string>
              </property>
             </widget>
            </item>
@@ -295,7 +298,7 @@
              <item row="0" column="0">
               <widget class="QLabel" name="label_14">
                <property name="text">
-                <string>Number of persons</string>
+                <string>Number of persons *</string>
                </property>
               </widget>
              </item>
@@ -333,7 +336,7 @@
               <item row="0" column="0">
                <widget class="QLabel" name="label_12">
                 <property name="text">
-                 <string>Define gender</string>
+                 <string>Define gender *</string>
                 </property>
                </widget>
               </item>
@@ -343,7 +346,7 @@
               <item row="1" column="0">
                <widget class="QLabel" name="label_15">
                 <property name="text">
-                 <string>Define employment type</string>
+                 <string>Define employment type *</string>
                 </property>
                </widget>
               </item>
@@ -352,13 +355,46 @@
               </item>
               <item row="2" column="0">
                <widget class="QLabel" name="label_13">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
                 <property name="text">
-                 <string>Define bedroom assignment</string>
+                 <string>Define bedroom assignment *</string>
                 </property>
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QCheckBox" name="bedroomBool"/>
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <widget class="QCheckBox" name="bedroomBool">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_16">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                    <italic>true</italic>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>requires number of bedrooms ↑</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </widget>
@@ -405,7 +441,7 @@
            <item row="0" column="0">
             <widget class="QLabel" name="label_18">
              <property name="text">
-              <string>Setpoint settings</string>
+              <string>Setpoint settings *</string>
              </property>
             </widget>
            </item>
@@ -438,7 +474,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Heated rooms</string>
+              <string>Heated rooms *</string>
              </property>
             </widget>
            </item>
@@ -545,8 +581,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
-             <width>396</width>
+             <y>-476</y>
+             <width>391</width>
              <height>1129</height>
             </rect>
            </property>
@@ -710,7 +746,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_21">
                    <property name="text">
-                    <string>Use file for activity profile</string>
+                    <string>Use file for activity profile *</string>
                    </property>
                   </widget>
                  </item>
@@ -767,7 +803,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_22">
                    <property name="text">
-                    <string>Define present appliances</string>
+                    <string>Define present appliances *</string>
                    </property>
                   </widget>
                  </item>
@@ -1207,7 +1243,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_23">
                    <property name="text">
-                    <string>Define window use habits</string>
+                    <string>Define window use habits *</string>
                    </property>
                   </widget>
                  </item>
@@ -2195,6 +2231,32 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="label_19">
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>* When the user does not define a certain parameter himself,</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_20">
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>  the model takes a random value based on integrated probabilities.</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <spacer name="horizontalSpacer">
@@ -2251,12 +2313,48 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>455</width>
+     <width>743</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="exportConfig"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="helpDock">
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QTextBrowser" name="helpText"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="exportConfig">
+   <property name="text">
+    <string>Export parameters to .txt</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Show Docs</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
   <tabstop>tabWidget</tabstop>
@@ -2275,7 +2373,6 @@
   <tabstop>numPersons</tabstop>
   <tabstop>genderBool</tabstop>
   <tabstop>employmentBool</tabstop>
-  <tabstop>bedroomBool</tabstop>
   <tabstop>peopleTable</tabstop>
   <tabstop>checkBox_11</tabstop>
   <tabstop>heatSetpoint</tabstop>
@@ -2378,7 +2475,7 @@
      <y>318</y>
     </hint>
     <hint type="destinationlabel">
-     <x>421</x>
+     <x>382</x>
      <y>323</y>
     </hint>
    </hints>
@@ -2439,11 +2536,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>148</x>
-     <y>614</y>
+     <y>615</y>
     </hint>
     <hint type="destinationlabel">
-     <x>421</x>
-     <y>619</y>
+     <x>439</x>
+     <y>620</y>
     </hint>
    </hints>
   </connection>
@@ -2454,7 +2551,7 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>229</x>
+     <x>222</x>
      <y>124</y>
     </hint>
     <hint type="destinationlabel">
@@ -2490,7 +2587,7 @@
      <y>413</y>
     </hint>
     <hint type="destinationlabel">
-     <x>394</x>
+     <x>383</x>
      <y>418</y>
     </hint>
    </hints>
@@ -2502,7 +2599,7 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
+     <x>384</x>
      <y>476</y>
     </hint>
     <hint type="destinationlabel">
@@ -2518,11 +2615,11 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
+     <x>384</x>
      <y>476</y>
     </hint>
     <hint type="destinationlabel">
-     <x>396</x>
+     <x>385</x>
      <y>734</y>
     </hint>
    </hints>
@@ -2534,7 +2631,7 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
+     <x>384</x>
      <y>790</y>
     </hint>
     <hint type="destinationlabel">
@@ -2550,11 +2647,11 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
+     <x>384</x>
      <y>790</y>
     </hint>
     <hint type="destinationlabel">
-     <x>396</x>
+     <x>385</x>
      <y>948</y>
     </hint>
    </hints>
@@ -2566,11 +2663,11 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>387</x>
+     <x>376</x>
      <y>822</y>
     </hint>
     <hint type="destinationlabel">
-     <x>396</x>
+     <x>385</x>
      <y>908</y>
     </hint>
    </hints>
@@ -2582,7 +2679,7 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>387</x>
+     <x>376</x>
      <y>936</y>
     </hint>
     <hint type="destinationlabel">
@@ -2598,11 +2695,11 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>274</x>
+     <x>267</x>
      <y>124</y>
     </hint>
     <hint type="destinationlabel">
-     <x>302</x>
+     <x>295</x>
      <y>123</y>
     </hint>
    </hints>
@@ -2614,11 +2711,11 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>274</x>
+     <x>267</x>
      <y>124</y>
     </hint>
     <hint type="destinationlabel">
-     <x>395</x>
+     <x>384</x>
      <y>123</y>
     </hint>
    </hints>
@@ -2631,11 +2728,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>148</x>
-     <y>672</y>
+     <y>673</y>
     </hint>
     <hint type="destinationlabel">
-     <x>421</x>
-     <y>705</y>
+     <x>439</x>
+     <y>706</y>
     </hint>
    </hints>
   </connection>
@@ -2652,6 +2749,54 @@
     <hint type="destinationlabel">
      <x>221</x>
      <y>554</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_5</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_13</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>284</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_5</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>bedroomBool</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>237</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>460</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_5</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_16</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>463</y>
     </hint>
    </hints>
   </connection>

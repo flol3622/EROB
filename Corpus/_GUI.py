@@ -2,7 +2,7 @@ import os
 import sys
 
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtCore import QTimer
+from PyQt6.QtCore import QTimer, QUrl
 from PyQt6.QtWidgets import QComboBox, QTableWidgetItem
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -80,6 +80,13 @@ class Ui(QtWidgets.QMainWindow):
 
         # connect the button to highlight the numPersons spinbox
         self.goToNumPersons.clicked.connect(self.highlightNumPersons)
+
+        # help documentation
+        self.actionHelp.triggered.connect(self.helpDock.show)
+        self.helpText.setOpenExternalLinks(True)
+        self.helpText.setSource(
+            QUrl.fromLocalFile(os.path.join(base_dir, "GUI/help.html"))
+        )
 
     def updatePeopleTable(self):
         rows = self.numPersons.value()
