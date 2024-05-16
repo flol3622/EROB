@@ -3,3 +3,6 @@ output/
 *.pyo
 *.pyd
 .venv/
+dist/
+build/
+*.spec

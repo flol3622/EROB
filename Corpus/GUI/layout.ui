@@ -581,8 +581,8 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-476</y>
-             <width>391</width>
+             <y>0</y>
+             <width>406</width>
              <height>1129</height>
             </rect>
            </property>
@@ -2239,20 +2239,13 @@
        </font>
       </property>
       <property name="text">
-       <string>* When the user does not define a certain parameter himself,</string>
+       <string>* When the user does not define a certain parameter himself, the model takes a random value based on integrated probabilities.</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_20">
-      <property name="font">
-       <font>
-        <pointsize>8</pointsize>
-        <italic>true</italic>
-       </font>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
-      <property name="text">
-       <string>  the model takes a random value based on integrated probabilities.</string>
+      <property name="indent">
+       <number>10</number>
       </property>
      </widget>
     </item>
@@ -2290,19 +2283,6 @@
          <string>generate file</string>
         </property>
        </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>

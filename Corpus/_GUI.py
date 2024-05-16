@@ -36,7 +36,7 @@ def occupancyComboBox():
     return comboBox
 
 
-def bedroomComboBox(bedrooms):
+def bedroomSpinBox(bedrooms):
     spinBox = QSpinBox()
     spinBox.setMaximum(bedrooms.value())
     spinBox.setMinimum(1)
@@ -95,10 +95,10 @@ class Ui(QtWidgets.QMainWindow):
         for i in range(rows):
             # add label i inside the first column, unchangable (label)
             self.peopleTable.setItem(i, 0, QTableWidgetItem(f"Person {i + 1}"))
-            if self.peopleTable.cellWidget(i, 0) is None:
+            if self.peopleTable.cellWidget(i, 1) is None:
                 self.peopleTable.setCellWidget(i, 1, genderComboBox())
                 self.peopleTable.setCellWidget(i, 2, employmentComboBox())
-                self.peopleTable.setCellWidget(i, 3, bedroomComboBox(self.numBedrooms))
+                self.peopleTable.setCellWidget(i, 3, bedroomSpinBox(self.numBedrooms))
 
         self.peopleTable2.setRowCount(rows)
         for i in range(rows):
@@ -117,4 +117,5 @@ class Ui(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = Ui()
+    window.setWindowTitle("EROB gui")
     sys.exit(app.exec())
