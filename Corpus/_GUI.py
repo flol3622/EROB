@@ -3,7 +3,7 @@ import sys
 
 from PyQt6 import QtWidgets, uic
 from PyQt6.QtCore import QTimer, QUrl
-from PyQt6.QtWidgets import QComboBox, QTableWidgetItem
+from PyQt6.QtWidgets import QComboBox, QTableWidgetItem, QSpinBox
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -37,17 +37,18 @@ def occupancyComboBox():
 
 
 def bedroomComboBox(bedrooms):
-    max = bedrooms.value()
-    comboBox = QComboBox()
-    comboBox.addItems([str(i) for i in range(1, max + 1)])
+    spinBox = QSpinBox()
+    spinBox.setMaximum(bedrooms.value())
+    spinBox.setMinimum(1)
 
-    # listen to changes in the number of bedrooms
-    bedrooms.valueChanged.connect(
-        lambda: comboBox.clear()
-        or comboBox.addItems([str(i) for i in range(1, bedrooms.value() + 1)])
-    )
+    def updateSpinBoxMax(bedrooms, spinBox):
+        try:
+            spinBox.setMaximum(bedrooms.value())
+        except Exception:
+            pass
 
-    return comboBox
+    bedrooms.valueChanged.connect(lambda: updateSpinBoxMax(bedrooms, spinBox))
+    return spinBox
 
 
 class Ui(QtWidgets.QMainWindow):
