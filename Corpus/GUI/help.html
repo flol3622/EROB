@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUI Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #1E64C8
+      }
+      p {
+        margin-top: -20px;
+        margin-left: 5px;
+      }
+      h4 {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Documentation EROB</h1>
+    <p>
+      This documentation provides an overview of each parameter available in the
+      GUI for the EROB simulation setup.
+    </p>
+
+    <div class="section">
+      <h2>Basic Settings</h2>
+      <div class="subsection">
+        <h3>Simulation</h3>
+        <h4>Simulation length (in days)</h4>
+        <p>The duration of the simulation in days. Default is 365 days.</p>
+        <h4>Year</h4>
+        <p>The year to start the simulation. Default is 2021.</p>
+      </div>
+      <div class="subsection">
+        <h3>Building</h3>
+        <h4>Number of buildings</h4>
+        <p>Specifies the number of buildings to simulate. Default is 1.</p>
+        <h4>Dwelling type</h4>
+        <p>
+          Indicates the type of dwelling. Options include apartment or house.
+        </p>
+        <h4>Year of construction/renovation</h4>
+        <p>The year the building was constructed or last renovated.</p>
+        <h4>Number of bedrooms</h4>
+        <p>Number of bedrooms in the building.</p>
+        <h4>Ventilation system</h4>
+        <p>
+          Type of ventilation system in the building. Options are no system,
+          exhaust ventilation, or balanced ventilation.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Household and Members</h2>
+      <h4>Number of persons</h4>
+      <p>Total number of persons in the household.</p>
+      <h4>Define gender</h4>
+      <p>Option to specify the gender of each household member.</p>
+      <h4>Define employment type</h4>
+      <p>
+        Option to define the employment type for each member (e.g., full-time,
+        part-time, unemployed, retired, school, student).
+      </p>
+      <h4>Define bedroom assignment</h4>
+      <p>Option to assign specific bedrooms to household members.</p>
+    </div>
+
+    <div class="section">
+      <h2>Heating</h2>
+      <h4>Setpoint settings</h4>
+      <p>
+        Predefined heating profiles. The profiles dictate temperatures for
+        active, asleep, and absent states.
+      </p>
+      <h4>Heated rooms</h4>
+      <p>
+        Selection of rooms to be heated. Options include day zone, bathroom, and
+        night zone.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Advanced Settings</h2>
+      <div class="subsection">
+        <h3>Occupancy and Activity Profiles</h3>
+        <h4>Occupancy profile</h4>
+        <p>
+          Method to define occupancy profiles. Options include auto (default),
+          custom, file, or no file.
+        </p>
+        <h4>Use file for activity profile</h4>
+        <p>Option to use an external file for detailed activity profiles.</p>
+      </div>
+      <div class="subsection">
+        <h3>Appliances</h3>
+        <h4>Define present appliances</h4>
+        <p>
+          Selection of appliances present in the household. Options include:
+        </p>
+        <ul>
+          <li>
+            Electricity: Printer, hob, oven, HiFi, iron, vacuum, kettle,
+            freezer, refrigerator, microwave, fridge freezer, dishwasher,
+            washing machine, tumble dryer, PC, TV, smartphone.
+          </li>
+          <li>Water: Bath, shower, dishwasher, other flows.</li>
+        </ul>
+      </div>
+      <div class="subsection">
+        <h3>Window Opening</h3>
+        <h4>Define window use habits</h4>
+        <p>
+          Option to specify window use habits for different rooms and seasons.
+        </p>
+        <ul>
+          <li>
+            In general: Household habit in winter and seasonality coherence.
+          </li>
+          <li>
+            In detail: Custom habits for each room (living room, kitchen,
+            bedroom, bathroom, leaving, sleeping) in winter and summer.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Additional Notes</h2>
+      <p>
+        When parameters are not defined by the user, the model will take a
+        random value based on integrated probabilities.
+      </p>
+    </div>
+  </body>
+</html>

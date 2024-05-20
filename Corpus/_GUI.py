@@ -1,59 +1,121 @@
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout
-import GUI
+import os
+import sys
+
+from PyQt6 import QtWidgets, uic
+from PyQt6.QtCore import QTimer, QUrl
+from PyQt6.QtWidgets import QComboBox, QTableWidgetItem, QSpinBox
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-class GUIApp(QWidget):
+def genderComboBox():
+    comboBox = QComboBox()
+    comboBox.addItems(["M", "F"])
+    return comboBox
+
+
+def employmentComboBox():
+    comboBox = QComboBox()
+    comboBox.addItems(["FTE", "PTE", "Retired", "School", "Student", "Unemployed"])
+    return comboBox
+
+
+def occupancyComboBox():
+    comboBox = QComboBox()
+    comboBox.addItems(
+        [
+            "Nightshift",
+            "Early shift",
+            "Short absence",
+            "Dayshift",
+            "Half day absence",
+            "Long absence",
+            "Always present",
+        ]
+    )
+    return comboBox
+
+
+def bedroomSpinBox(bedrooms):
+    spinBox = QSpinBox()
+    spinBox.setMaximum(bedrooms.value())
+    spinBox.setMinimum(1)
+
+    def updateSpinBoxMax(bedrooms, spinBox):
+        try:
+            spinBox.setMaximum(bedrooms.value())
+        except Exception:
+            pass
+
+    bedrooms.valueChanged.connect(lambda: updateSpinBoxMax(bedrooms, spinBox))
+    return spinBox
+
+
+class Ui(QtWidgets.QMainWindow):
     def __init__(self):
-        super().__init__()
-        self.initUI()
+        super(Ui, self).__init__()
+        uic.loadUi(os.path.join(base_dir, "GUI/layout.ui"), self)
+        self.show()
 
-    def initUI(self):
-        main_layout = QVBoxLayout()
+        # accord person table to number of persons
+        self.numPersons.valueChanged.connect(self.updatePeopleTable)
 
-        # Setup groups for different settings
-        GUI.pannel_simulation(self, main_layout)
-        GUI.pannel_building(self, main_layout)
-        GUI.pannel_people(self, main_layout)
-        GUI.pannel_heating_occupancy(self, main_layout)
-        GUI.pannel_advanced(self, main_layout)
-        GUI.pannel_output(self, main_layout)
+        # disable all columns
+        for i in range(1, 4):
+            self.peopleTable.setColumnHidden(i, True)
 
-        self.setLayout(main_layout)
-        self.setWindowTitle('Simulation Configuration')
-        self.setGeometry(300, 300, 600, 700)
+        # if the checkbox is checked, show the column
+        self.genderBool.stateChanged.connect(
+            lambda: self.peopleTable.setColumnHidden(1, not self.genderBool.isChecked())
+        )
+        self.employmentBool.stateChanged.connect(
+            lambda: self.peopleTable.setColumnHidden(
+                2, not self.employmentBool.isChecked()
+            )
+        )
+        self.bedroomBool.stateChanged.connect(
+            lambda: self.peopleTable.setColumnHidden(
+                3, not self.bedroomBool.isChecked()
+            )
+        )
 
-    def generate(self):
-        # folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
-        # if folder_path:
-        # Initialize a dictionary to store all parameters
-        parameters = {}
+        # connect the button to highlight the numPersons spinbox
+        self.goToNumPersons.clicked.connect(self.highlightNumPersons)
 
-        # Retrieve values from spin boxes
-        parameters['simulation_length'] = self.simulation_length.value()
-        parameters['year'] = self.year.value()
-        parameters['number_of_buildings'] = self.number_of_buildings.value()
-        parameters['number_of_persons'] = self.number_of_persons.value()
-        parameters['number_of_bedrooms'] = self.number_of_bedrooms.value()
+        # help documentation
+        self.actionHelp.triggered.connect(self.helpDock.show)
+        self.helpText.setOpenExternalLinks(True)
+        self.helpText.setSource(
+            QUrl.fromLocalFile(os.path.join(base_dir, "GUI/help.html"))
+        )
 
-        # Retrieve values from input fields
-        parameters['ventilation_system'] = self.ventilation_system.currentText()
-        parameters['dwelling_type'] = self.dwelling_type.currentText()
-        parameters['year_built'] = self.year_built.text()
-        parameters['heating_profile'] = self.heating_profile.text()
-        parameters['members'] = self.members.text()
-        parameters['occupancy_profiles'] = self.occupancy_profiles.text()
-        parameters['activity_profiles'] = self.activity_profiles.text()
-        parameters['appliances'] = self.appliances.text()
-        parameters['window_use_habits'] = self.window_use_habits.text()
-        parameters['result_file_name'] = self.result_file_name.text()
+    def updatePeopleTable(self):
+        rows = self.numPersons.value()
+        self.peopleTable.setRowCount(rows)
+        for i in range(rows):
+            # add label i inside the first column, unchangable (label)
+            self.peopleTable.setItem(i, 0, QTableWidgetItem(f"Person {i + 1}"))
+            if self.peopleTable.cellWidget(i, 1) is None:
+                self.peopleTable.setCellWidget(i, 1, genderComboBox())
+                self.peopleTable.setCellWidget(i, 2, employmentComboBox())
+                self.peopleTable.setCellWidget(i, 3, bedroomSpinBox(self.numBedrooms))
 
-        # print(f"Saving output to: {folder_path}")
-        print("Parameters:", parameters)
-        # Here, you can further process the collected parameters as needed.
+        self.peopleTable2.setRowCount(rows)
+        for i in range(rows):
+            if self.peopleTable2.cellWidget(i, 0) is None:
+                for j in range(7):
+                    self.peopleTable2.setCellWidget(i, j, occupancyComboBox())
+
+    def highlightNumPersons(self):
+        self.tabWidget.setCurrentIndex(0)
+        self.label_14.setStyleSheet("border: 2px solid blue;")
+        self.timer = QTimer()
+        self.timer.timeout.connect(lambda: self.label_14.setStyleSheet("border: none;"))
+        self.timer.start(500)
 
 
-if __name__ == '__main__':
-    app = QApplication([])
-    ex = GUIApp()
-    ex.show()
-    app.exec()
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    window = Ui()
+    window.setWindowTitle("EROB gui")
+    sys.exit(app.exec())
