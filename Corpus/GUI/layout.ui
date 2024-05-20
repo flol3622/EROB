@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>743</width>
-    <height>835</height>
+    <width>727</width>
+    <height>865</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -134,10 +134,10 @@
               <number>7</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="checkBox_6"/>
+              <widget class="QCheckBox" name="dwBool"/>
              </item>
              <item>
-              <widget class="QComboBox" name="dwellingType">
+              <widget class="QComboBox" name="dwType">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -174,7 +174,7 @@
               <number>7</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="checkBox_2"/>
+              <widget class="QCheckBox" name="constrYearBool"/>
              </item>
              <item>
               <widget class="QSpinBox" name="constrYear">
@@ -213,7 +213,7 @@
               <number>7</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="checkBox_5"/>
+              <widget class="QCheckBox" name="bedroomBoolMain"/>
              </item>
              <item>
               <widget class="QSpinBox" name="numBedrooms">
@@ -249,7 +249,7 @@
               <number>7</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="checkBox"/>
+              <widget class="QCheckBox" name="ventBool"/>
              </item>
              <item>
               <widget class="QComboBox" name="ventSystem">
@@ -448,7 +448,7 @@
            <item row="0" column="1">
             <layout class="QHBoxLayout" name="horizontalLayout_12">
              <item>
-              <widget class="QCheckBox" name="checkBox_11"/>
+              <widget class="QCheckBox" name="heatSetpointBool"/>
              </item>
              <item>
               <widget class="QComboBox" name="heatSetpoint">
@@ -461,6 +461,41 @@
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <item>
+                <property name="text">
+                 <string>17    , 14 ,    15</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>18.5 , 15 ,    18.5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20    , 15 ,    19.5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20    , 11 ,    19.5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20    , 14.5 , 15</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>21    , 20.5 , 21</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>21.5 , 15.5 , 21.5</string>
+                </property>
+               </item>
               </widget>
              </item>
             </layout>
@@ -481,7 +516,7 @@
            <item row="1" column="1">
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <widget class="QCheckBox" name="checkBox_10">
+              <widget class="QCheckBox" name="shroomsBool">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -498,15 +533,15 @@
               </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget" native="true">
+              <widget class="QWidget" name="shroomsWidget" native="true">
                <property name="enabled">
                 <bool>false</bool>
                </property>
                <layout class="QFormLayout" name="formLayout_5">
                 <item row="0" column="0">
-                 <widget class="QLabel" name="label_11">
+                 <widget class="QLabel" name="label_9">
                   <property name="text">
-                   <string>day zone</string>
+                   <string>dayzone</string>
                   </property>
                  </widget>
                 </item>
@@ -518,28 +553,28 @@
                  </widget>
                 </item>
                 <item row="2" column="0">
-                 <widget class="QLabel" name="label_9">
+                 <widget class="QLabel" name="label_11">
                   <property name="text">
-                   <string>night zone</string>
+                   <string>nightzone</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QCheckBox" name="checkBox_30">
+                 <widget class="QCheckBox" name="dayZone">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QCheckBox" name="checkBox_31">
+                 <widget class="QCheckBox" name="bathroom">
                   <property name="text">
                    <string/>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QCheckBox" name="checkBox_34">
+                 <widget class="QCheckBox" name="nightZone">
                   <property name="text">
                    <string/>
                   </property>
@@ -582,7 +617,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>406</width>
+             <width>390</width>
              <height>1129</height>
             </rect>
            </property>
@@ -753,7 +788,7 @@
                  <item row="0" column="1">
                   <layout class="QHBoxLayout" name="horizontalLayout_8">
                    <item>
-                    <widget class="QCheckBox" name="checkBox_27">
+                    <widget class="QCheckBox" name="actOnFile">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -790,7 +825,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="groupBox_6">
+             <widget class="QGroupBox" name="appGroup">
               <property name="title">
                <string>Appliances</string>
               </property>
@@ -808,7 +843,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QCheckBox" name="checkBox_15"/>
+                  <widget class="QCheckBox" name="appBool"/>
                  </item>
                 </layout>
                </item>
@@ -821,58 +856,6 @@
                   <string>Electricity</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout">
-                  <item row="1" column="5">
-                   <widget class="QCheckBox" name="checkBox_21">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="5">
-                   <widget class="QCheckBox" name="checkBox_22">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="5">
-                   <widget class="QCheckBox" name="checkBox_23">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="5">
-                   <widget class="QCheckBox" name="checkBox_19">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="2" column="4">
                    <widget class="QLabel" name="label_33">
                     <property name="text">
@@ -894,148 +877,10 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="4" column="0">
-                   <widget class="QLabel" name="label_36">
-                    <property name="text">
-                     <string>iron</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QCheckBox" name="checkBox_26">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="2">
-                   <widget class="QLabel" name="label_37">
-                    <property name="text">
-                     <string>microwave</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="3">
-                   <widget class="QCheckBox" name="checkBox_25">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="1" column="4">
                    <widget class="QLabel" name="label_32">
                     <property name="text">
                      <string>dish washer</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="3">
-                   <widget class="QCheckBox" name="checkBox_17">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="3">
-                   <widget class="QCheckBox" name="checkBox_16">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="3">
-                   <widget class="QCheckBox" name="checkBox_20">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="3">
-                   <widget class="QCheckBox" name="checkBox_18">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_24">
-                    <property name="text">
-                     <string>HiFi</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QCheckBox" name="checkBox_8">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QCheckBox" name="checkBox_7">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QCheckBox" name="checkBox_4">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -1049,6 +894,9 @@
                     </property>
                     <property name="text">
                      <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>printer</string>
                     </property>
                    </widget>
                   </item>
@@ -1067,10 +915,18 @@
                    </widget>
                   </item>
                   <item row="5" column="1">
-                   <widget class="QSpinBox" name="spinBox_6"/>
+                   <widget class="QSpinBox" name="spinBox_6">
+                    <property name="applianceName" stdset="0">
+                     <string>pc</string>
+                    </property>
+                   </widget>
                   </item>
                   <item row="5" column="3">
-                   <widget class="QSpinBox" name="spinBox_8"/>
+                   <widget class="QSpinBox" name="spinBox_8">
+                    <property name="applianceName" stdset="0">
+                     <string>tv</string>
+                    </property>
+                   </widget>
                   </item>
                   <item row="5" column="4">
                    <widget class="QLabel" name="label_39">
@@ -1080,40 +936,9 @@
                    </widget>
                   </item>
                   <item row="5" column="5">
-                   <widget class="QSpinBox" name="spinBox_9"/>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_35">
-                    <property name="text">
-                     <string>printer</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_43">
-                    <property name="text">
-                     <string>hob</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_42">
-                    <property name="text">
-                     <string>oven</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QLabel" name="label_28">
-                    <property name="text">
-                     <string>vacuum</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLabel" name="label_47">
-                    <property name="text">
-                     <string>kettle</string>
+                   <widget class="QSpinBox" name="spinBox_9">
+                    <property name="applianceName" stdset="0">
+                     <string>smartphone</string>
                     </property>
                    </widget>
                   </item>
@@ -1131,6 +956,270 @@
                     </property>
                    </widget>
                   </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="label_47">
+                    <property name="text">
+                     <string>kettle</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_28">
+                    <property name="text">
+                     <string>vacuum</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLabel" name="label_37">
+                    <property name="text">
+                     <string>microwave</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_24">
+                    <property name="text">
+                     <string>HiFi</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_35">
+                    <property name="text">
+                     <string>printer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_42">
+                    <property name="text">
+                     <string>oven</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_36">
+                    <property name="text">
+                     <string>iron</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_43">
+                    <property name="text">
+                     <string>hob</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="5">
+                   <widget class="QCheckBox" name="checkBox_43">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>dish washer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="5">
+                   <widget class="QCheckBox" name="checkBox_44">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>washing machine</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="5">
+                   <widget class="QCheckBox" name="checkBox_45">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>tumble dryer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QCheckBox" name="checkBox_12">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>kettle</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QCheckBox" name="checkBox_11">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>freezer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="3">
+                   <widget class="QCheckBox" name="checkBox_40">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>refrigerator</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QCheckBox" name="checkBox_42">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>hob</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QCheckBox" name="checkBox_13">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>oven</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QCheckBox" name="checkBox_50">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>HiFi</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QCheckBox" name="checkBox_46">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>iron</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="5">
+                   <widget class="QCheckBox" name="checkBox_41">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>fridge freezer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QCheckBox" name="checkBox_51">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>vacuum</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QCheckBox" name="checkBox_47">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>microwave</string>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -1144,7 +1233,7 @@
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
                   <item row="0" column="1">
-                   <widget class="QCheckBox" name="checkBox_39">
+                   <widget class="QCheckBox" name="checkBox_17">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -1154,52 +1243,8 @@
                     <property name="text">
                      <string/>
                     </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_52">
-                    <property name="text">
+                    <property name="applianceName" stdset="0">
                      <string>bath</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QCheckBox" name="checkBox_36">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_49">
-                    <property name="text">
-                     <string>other flows</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QLabel" name="label_41">
-                    <property name="text">
-                     <string>shower</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="3">
-                   <widget class="QCheckBox" name="checkBox_29">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -1210,8 +1255,15 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="5">
-                   <widget class="QCheckBox" name="checkBox_24">
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_49">
+                    <property name="text">
+                     <string>other flows</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QCheckBox" name="checkBox_16">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                       <horstretch>0</horstretch>
@@ -1220,6 +1272,55 @@
                     </property>
                     <property name="text">
                      <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>shower</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_41">
+                    <property name="text">
+                     <string>shower</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_52">
+                    <property name="text">
+                     <string>bath</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="5">
+                   <widget class="QCheckBox" name="checkBox_8">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>dish washer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QCheckBox" name="checkBox_7">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>other flow</string>
                     </property>
                    </widget>
                   </item>
@@ -1248,7 +1349,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QCheckBox" name="checkBox_28"/>
+                  <widget class="QCheckBox" name="habitsBool"/>
                  </item>
                 </layout>
                </item>
@@ -1259,7 +1360,7 @@
                  </property>
                  <layout class="QFormLayout" name="formLayout_14">
                   <item row="0" column="1">
-                   <widget class="QCheckBox" name="checkBox_32"/>
+                   <widget class="QCheckBox" name="habitsGeneralBool"/>
                   </item>
                   <item row="0" column="0">
                    <widget class="QLabel" name="label_29">
@@ -1288,7 +1389,7 @@
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QComboBox" name="comboBox_17">
+                   <widget class="QComboBox" name="hhhabits">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>1</horstretch>
@@ -1330,7 +1431,7 @@
                    </widget>
                   </item>
                   <item row="1" column="1">
-                   <widget class="QComboBox" name="comboBox_18">
+                   <widget class="QComboBox" name="seasonality">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>1</horstretch>
@@ -1369,7 +1470,7 @@
                  </property>
                  <layout class="QFormLayout" name="formLayout_15">
                   <item row="0" column="1">
-                   <widget class="QCheckBox" name="checkBox_33"/>
+                   <widget class="QCheckBox" name="habitsDetailBool"/>
                   </item>
                   <item row="0" column="0">
                    <widget class="QLabel" name="label_53">
@@ -1406,13 +1507,13 @@
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>465</width>
-                    <height>201</height>
+                    <width>509</width>
+                    <height>192</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_4">
                    <item>
-                    <widget class="QFrame" name="formFrame_6">
+                    <widget class="QFrame" name="formHabits">
                      <layout class="QFormLayout" name="formLayout_12">
                       <property name="leftMargin">
                        <number>10</number>
@@ -1487,7 +1588,7 @@
                          </sizepolicy>
                         </property>
                         <property name="text">
-                         <string>living:</string>
+                         <string>leaving:</string>
                         </property>
                        </widget>
                       </item>
@@ -1605,17 +1706,22 @@
                           </item>
                           <item>
                            <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
                             <string>open evening</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
                             <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>always open</string>
                            </property>
                           </item>
                          </widget>
@@ -1628,6 +1734,13 @@
                          <widget class="QLabel" name="label_50">
                           <property name="text">
                            <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_48">
+                          <property name="text">
+                           <string>winter</string>
                           </property>
                          </widget>
                         </item>
@@ -1651,17 +1764,17 @@
                           </item>
                           <item>
                            <property name="text">
+                            <string>open when cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open after cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
                             <string>open morning short</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open morning long</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open when present</string>
                            </property>
                           </item>
                           <item>
@@ -1671,21 +1784,19 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>closed when present</string>
+                            <string>always open</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>always open</string>
+                            <string>open when present</string>
                            </property>
                           </item>
-                         </widget>
-                        </item>
-                        <item row="0" column="0">
-                         <widget class="QLabel" name="label_48">
-                          <property name="text">
-                           <string>winter</string>
-                          </property>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
                          </widget>
                         </item>
                         <item row="0" column="3">
@@ -1708,17 +1819,17 @@
                           </item>
                           <item>
                            <property name="text">
+                            <string>open when cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open after cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
                             <string>open morning short</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open morning long</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open when present</string>
                            </property>
                           </item>
                           <item>
@@ -1728,12 +1839,22 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>closed when present</string>
+                            <string>always open</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>always open</string>
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
                            </property>
                           </item>
                          </widget>
@@ -1742,6 +1863,20 @@
                       </item>
                       <item row="2" column="1">
                        <layout class="QGridLayout" name="gridLayout_7">
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_73">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_74">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
                         <item row="0" column="1">
                          <widget class="QComboBox" name="comboBox_43">
                           <property name="sizePolicy">
@@ -1772,38 +1907,19 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>open when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open evening</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
                             <string>always open</string>
                            </property>
                           </item>
-                         </widget>
-                        </item>
-                        <item row="0" column="2">
-                         <widget class="QLabel" name="label_73">
-                          <property name="text">
-                           <string>summer</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="0" column="0">
-                         <widget class="QLabel" name="label_74">
-                          <property name="text">
-                           <string>winter</string>
-                          </property>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open before sleep</string>
+                           </property>
+                          </item>
                          </widget>
                         </item>
                         <item row="0" column="3">
@@ -1836,22 +1952,22 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>open when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open evening</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
                             <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open before sleep</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open during the day</string>
                            </property>
                           </item>
                          </widget>
@@ -1864,13 +1980,6 @@
                          <widget class="QLabel" name="label_75">
                           <property name="text">
                            <string>summer</string>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="0" column="0">
-                         <widget class="QLabel" name="label_76">
-                          <property name="text">
-                           <string>winter</string>
                           </property>
                          </widget>
                         </item>
@@ -1894,22 +2003,22 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning short</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open morning long</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
                             <string>open when present</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open evening</string>
+                            <string>open after present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
                            </property>
                           </item>
                           <item>
@@ -1919,9 +2028,16 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>always open</string>
+                            <string>open morning long</string>
                            </property>
                           </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_76">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
                          </widget>
                         </item>
                         <item row="0" column="3">
@@ -1944,22 +2060,22 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning short</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>open morning long</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
                             <string>open when present</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open evening</string>
+                            <string>open after present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
                            </property>
                           </item>
                           <item>
@@ -1969,7 +2085,12 @@
                           </item>
                           <item>
                            <property name="text">
-                            <string>always open</string>
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
                            </property>
                           </item>
                          </widget>
@@ -1985,13 +2106,6 @@
                           </property>
                          </widget>
                         </item>
-                        <item row="0" column="2">
-                         <widget class="QLabel" name="label_71">
-                          <property name="text">
-                           <string>summer</string>
-                          </property>
-                         </widget>
-                        </item>
                         <item row="0" column="1">
                          <widget class="QComboBox" name="comboBox_47">
                           <property name="sizePolicy">
@@ -2002,44 +2116,41 @@
                           </property>
                           <item>
                            <property name="text">
-                            <string>no habit</string>
+                            <string>no change</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>always closed</string>
+                            <string>close all</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning short</string>
+                            <string>close accessible</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning long</string>
+                            <string>close all except bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open when present</string>
+                            <string>open bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open evening</string>
+                            <string>open all</string>
                            </property>
                           </item>
-                          <item>
-                           <property name="text">
-                            <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>always open</string>
-                           </property>
-                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_71">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
                          </widget>
                         </item>
                         <item row="0" column="3">
@@ -2052,42 +2163,32 @@
                           </property>
                           <item>
                            <property name="text">
-                            <string>no habit</string>
+                            <string>no change</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>always closed</string>
+                            <string>close all</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning short</string>
+                            <string>close accessible</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning long</string>
+                            <string>close all except bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open when present</string>
+                            <string>open bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open evening</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>always open</string>
+                            <string>open all</string>
                            </property>
                           </item>
                          </widget>
@@ -2096,15 +2197,8 @@
                       </item>
                       <item row="5" column="1">
                        <layout class="QGridLayout" name="gridLayout_9">
-                        <item row="0" column="2">
-                         <widget class="QLabel" name="label_77">
-                          <property name="text">
-                           <string>summer</string>
-                          </property>
-                         </widget>
-                        </item>
                         <item row="0" column="1">
-                         <widget class="QComboBox" name="comboBox_56">
+                         <widget class="QComboBox" name="comboBox_52">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                             <horstretch>1</horstretch>
@@ -2113,42 +2207,32 @@
                           </property>
                           <item>
                            <property name="text">
-                            <string>no habit</string>
+                            <string>no change</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>always closed</string>
+                            <string>close all</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning short</string>
+                            <string>close accessible</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning long</string>
+                            <string>close all except bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open when present</string>
+                            <string>close bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open evening</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>always open</string>
+                            <string>open all</string>
                            </property>
                           </item>
                          </widget>
@@ -2160,8 +2244,15 @@
                           </property>
                          </widget>
                         </item>
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_77">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
                         <item row="0" column="3">
-                         <widget class="QComboBox" name="comboBox_44">
+                         <widget class="QComboBox" name="comboBox_53">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                             <horstretch>1</horstretch>
@@ -2170,42 +2261,32 @@
                           </property>
                           <item>
                            <property name="text">
-                            <string>no habit</string>
+                            <string>no change</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>always closed</string>
+                            <string>close all</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning short</string>
+                            <string>close accessible</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open morning long</string>
+                            <string>close all except bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open when present</string>
+                            <string>open bedroom</string>
                            </property>
                           </item>
                           <item>
                            <property name="text">
-                            <string>open evening</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>closed when present</string>
-                           </property>
-                          </item>
-                          <item>
-                           <property name="text">
-                            <string>always open</string>
+                            <string>open all</string>
                            </property>
                           </item>
                          </widget>
@@ -2265,14 +2346,21 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="placeholderText">
+       <widget class="QToolButton" name="fileOutNameButton">
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="outFileLabel">
+        <property name="text">
          <string>out.txt</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="generateButton">
         <property name="minimumSize">
          <size>
           <width>100</width>
@@ -2293,7 +2381,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>743</width>
+     <width>727</width>
      <height>22</height>
     </rect>
    </property>
@@ -2341,65 +2429,48 @@
   <tabstop>simLength</tabstop>
   <tabstop>simYear</tabstop>
   <tabstop>numBuildings</tabstop>
-  <tabstop>checkBox_6</tabstop>
-  <tabstop>dwellingType</tabstop>
-  <tabstop>checkBox_2</tabstop>
+  <tabstop>dwBool</tabstop>
+  <tabstop>dwType</tabstop>
+  <tabstop>constrYearBool</tabstop>
   <tabstop>constrYear</tabstop>
-  <tabstop>checkBox_5</tabstop>
+  <tabstop>bedroomBoolMain</tabstop>
   <tabstop>numBedrooms</tabstop>
-  <tabstop>checkBox</tabstop>
+  <tabstop>ventBool</tabstop>
   <tabstop>ventSystem</tabstop>
   <tabstop>checkBox_14</tabstop>
   <tabstop>numPersons</tabstop>
   <tabstop>genderBool</tabstop>
   <tabstop>employmentBool</tabstop>
   <tabstop>peopleTable</tabstop>
-  <tabstop>checkBox_11</tabstop>
+  <tabstop>heatSetpointBool</tabstop>
   <tabstop>heatSetpoint</tabstop>
-  <tabstop>checkBox_10</tabstop>
+  <tabstop>shroomsBool</tabstop>
   <tabstop>scrollArea</tabstop>
   <tabstop>occupAuto</tabstop>
   <tabstop>occupCustom</tabstop>
   <tabstop>occupFile</tabstop>
   <tabstop>occProfileFile</tabstop>
   <tabstop>peopleTable2</tabstop>
-  <tabstop>checkBox_27</tabstop>
+  <tabstop>actOnFile</tabstop>
   <tabstop>activProfileFile</tabstop>
-  <tabstop>checkBox_15</tabstop>
-  <tabstop>checkBox_21</tabstop>
-  <tabstop>checkBox_22</tabstop>
-  <tabstop>checkBox_23</tabstop>
-  <tabstop>checkBox_19</tabstop>
-  <tabstop>checkBox_26</tabstop>
-  <tabstop>checkBox_25</tabstop>
-  <tabstop>checkBox_17</tabstop>
-  <tabstop>checkBox_16</tabstop>
-  <tabstop>checkBox_20</tabstop>
-  <tabstop>checkBox_18</tabstop>
-  <tabstop>checkBox_8</tabstop>
-  <tabstop>checkBox_7</tabstop>
-  <tabstop>checkBox_4</tabstop>
+  <tabstop>appBool</tabstop>
   <tabstop>checkBox_3</tabstop>
   <tabstop>spinBox_6</tabstop>
   <tabstop>spinBox_8</tabstop>
   <tabstop>spinBox_9</tabstop>
-  <tabstop>checkBox_39</tabstop>
-  <tabstop>checkBox_36</tabstop>
-  <tabstop>checkBox_29</tabstop>
-  <tabstop>checkBox_24</tabstop>
-  <tabstop>checkBox_28</tabstop>
-  <tabstop>checkBox_32</tabstop>
-  <tabstop>comboBox_17</tabstop>
-  <tabstop>comboBox_18</tabstop>
-  <tabstop>checkBox_33</tabstop>
+  <tabstop>habitsBool</tabstop>
+  <tabstop>habitsGeneralBool</tabstop>
+  <tabstop>hhhabits</tabstop>
+  <tabstop>seasonality</tabstop>
+  <tabstop>habitsDetailBool</tabstop>
   <tabstop>comboBox_32</tabstop>
  </tabstops>
  <resources/>
  <connections>
   <connection>
-   <sender>checkBox_6</sender>
+   <sender>dwBool</sender>
    <signal>toggled(bool)</signal>
-   <receiver>dwellingType</receiver>
+   <receiver>dwType</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2413,7 +2484,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_2</sender>
+   <sender>constrYearBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>constrYear</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2429,7 +2500,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_5</sender>
+   <sender>bedroomBoolMain</sender>
    <signal>toggled(bool)</signal>
    <receiver>numBedrooms</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2439,13 +2510,13 @@
      <y>288</y>
     </hint>
     <hint type="destinationlabel">
-     <x>255</x>
-     <y>272</y>
+     <x>434</x>
+     <y>293</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>checkBox</sender>
+   <sender>ventBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>ventSystem</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2509,18 +2580,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_11</sender>
+   <sender>heatSetpointBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>heatSetpoint</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>148</x>
-     <y>615</y>
+     <x>156</x>
+     <y>663</y>
     </hint>
     <hint type="destinationlabel">
-     <x>439</x>
-     <y>620</y>
+     <x>434</x>
+     <y>668</y>
     </hint>
    </hints>
   </connection>
@@ -2541,7 +2612,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_27</sender>
+   <sender>actOnFile</sender>
    <signal>toggled(bool)</signal>
    <receiver>activProfileFile</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2557,7 +2628,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_27</sender>
+   <sender>actOnFile</sender>
    <signal>toggled(bool)</signal>
    <receiver>activProfileFileDisp</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2573,7 +2644,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_15</sender>
+   <sender>appBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>groupBox_7</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2589,7 +2660,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_15</sender>
+   <sender>appBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>groupBox_8</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2605,7 +2676,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_28</sender>
+   <sender>habitsBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>formFrame_7</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2621,7 +2692,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_28</sender>
+   <sender>habitsBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>formFrame_8</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2637,7 +2708,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_32</sender>
+   <sender>habitsGeneralBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>frame_2</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2653,7 +2724,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_33</sender>
+   <sender>habitsDetailBool</sender>
    <signal>toggled(bool)</signal>
    <receiver>scrollArea_2</receiver>
    <slot>setEnabled(bool)</slot>
@@ -2701,18 +2772,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_10</sender>
+   <sender>shroomsBool</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget</receiver>
+   <receiver>shroomsWidget</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>148</x>
-     <y>673</y>
+     <x>156</x>
+     <y>721</y>
     </hint>
     <hint type="destinationlabel">
-     <x>439</x>
-     <y>706</y>
+     <x>434</x>
+     <y>754</y>
     </hint>
    </hints>
   </connection>
@@ -2733,14 +2804,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_5</sender>
+   <sender>bedroomBoolMain</sender>
    <signal>toggled(bool)</signal>
    <receiver>label_13</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>236</x>
-     <y>284</y>
+     <x>250</x>
+     <y>288</y>
     </hint>
     <hint type="destinationlabel">
      <x>131</x>
@@ -2749,13 +2820,13 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_5</sender>
+   <sender>bedroomBoolMain</sender>
    <signal>toggled(bool)</signal>
    <receiver>bedroomBool</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>237</x>
+     <x>250</x>
      <y>288</y>
     </hint>
     <hint type="destinationlabel">
@@ -2765,13 +2836,13 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_5</sender>
+   <sender>bedroomBoolMain</sender>
    <signal>toggled(bool)</signal>
    <receiver>label_16</receiver>
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>236</x>
+     <x>250</x>
      <y>288</y>
     </hint>
     <hint type="destinationlabel">

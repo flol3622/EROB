@@ -6,7 +6,7 @@ conda activate erob
 
 # extremely fast package installer
 pip install uv 
-uv pip install pyqt6-tools PySide6 auto-py-to-exe
+uv pip install pyqt6-tools PySide6 auto-py-to-exe rich
 ```
 
 ## Qt Designer
