@@ -6,3 +6,8 @@ output/
 dist/
 build/
 *.spec
+*.p
+**/duration.txt
+Data/InputFiles/*.txt
+!Data/InputFiles/empty.txt
+
