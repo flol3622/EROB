@@ -11,12 +11,6 @@ from PyQt6.QtWidgets import QComboBox, QTableWidgetItem, QSpinBox, QCheckBox, QW
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-def genderComboBox():
-    comboBox = QComboBox()
-    comboBox.addItems(["M", "F"])
-    return comboBox
-
-
 def employmentComboBox():
     comboBox = QComboBox()
     comboBox.addItems(["FTE", "PTE", "Retired", "School", "Student", "Unemployed"])
@@ -68,17 +62,14 @@ class Ui(QtWidgets.QMainWindow):
             self.peopleTable.setColumnHidden(i, True)
 
         # if the checkbox is checked, show the column
-        self.genderBool.stateChanged.connect(
-            lambda: self.peopleTable.setColumnHidden(1, not self.genderBool.isChecked())
-        )
         self.employmentBool.stateChanged.connect(
             lambda: self.peopleTable.setColumnHidden(
-                2, not self.employmentBool.isChecked()
+                1, not self.employmentBool.isChecked()
             )
         )
         self.bedroomBool.stateChanged.connect(
             lambda: self.peopleTable.setColumnHidden(
-                3, not self.bedroomBool.isChecked()
+                2, not self.bedroomBool.isChecked()
             )
         )
 
@@ -96,10 +87,14 @@ class Ui(QtWidgets.QMainWindow):
         self.occProfileFileName = None
         self.actProfileFileName = None
         self.occupFile.clicked.connect(
-            lambda: self.selectFile(self.occProfileFileDisp, "csv", "Select occupancy profile")
+            lambda: self.selectFile(
+                self.occProfileFileDisp, "txt", "Select occupancy profile"
+            )
         )
         self.actOnFile.clicked.connect(
-            lambda: self.selectFile(self.activProfileFileDisp, "csv", "Select activity profile")
+            lambda: self.selectFile(
+                self.activProfileFileDisp, "txt", "Select activity profile"
+            )
         )
 
         # define output file
@@ -116,9 +111,8 @@ class Ui(QtWidgets.QMainWindow):
             # add label i inside the first column, unchangable (label)
             self.peopleTable.setItem(i, 0, QTableWidgetItem(f"Person {i + 1}"))
             if self.peopleTable.cellWidget(i, 1) is None:
-                self.peopleTable.setCellWidget(i, 1, genderComboBox())
-                self.peopleTable.setCellWidget(i, 2, employmentComboBox())
-                self.peopleTable.setCellWidget(i, 3, bedroomSpinBox(self.numBedrooms))
+                self.peopleTable.setCellWidget(i, 1, employmentComboBox())
+                self.peopleTable.setCellWidget(i, 2, bedroomSpinBox(self.numBedrooms))
 
         self.peopleTable2.setRowCount(rows)
         for i in range(rows):
@@ -146,7 +140,7 @@ class Ui(QtWidgets.QMainWindow):
 
     def defineOutputFile(self):
         file, _ = QtWidgets.QFileDialog.getSaveFileName(
-            self, "Save file", "", "Text files (*.txt);;All files (*)"
+            self, "Save file", "", "Parameters files (*.p);;All files (*)"
         )
         if file:
             self.outFileLabel.setText(os.path.relpath(file))
