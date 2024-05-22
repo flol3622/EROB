@@ -19,11 +19,9 @@ import _pickle as cPickle
 import itertools
 from scipy.stats import weibull_min, genextreme, loglaplace
 
-import stats
-import data
-import windowhabits
+from . import stats, data, windowhabits
 
-sys.path.append("..")
+# sys.path.append("..")
 from Data.Households import households
 from Data.Appliances import set_appliances
 

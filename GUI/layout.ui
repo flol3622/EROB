@@ -1,0 +1,2839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>727</width>
+    <height>865</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_8">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Basic</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item alignment="Qt::AlignTop">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Simulation</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="horizontalSpacing">
+            <number>20</number>
+           </property>
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="text">
+              <string>Simulation length (in days)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Year</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="simYear">
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="maximum">
+              <number>3000</number>
+             </property>
+             <property name="value">
+              <number>2021</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="simLength">
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="value">
+              <number>365</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Building</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout_2">
+           <property name="horizontalSpacing">
+            <number>20</number>
+           </property>
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Number of buildings</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="numBuildings">
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Dwelling type *</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="spacing">
+              <number>7</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="dwBool"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="dwType">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>apartment</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>house</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Year of construction/renovation *</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="spacing">
+              <number>7</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="constrYearBool"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="constrYear">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="maximum">
+                <number>3000</number>
+               </property>
+               <property name="value">
+                <number>2000</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Number of bedrooms *</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <property name="spacing">
+              <number>7</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="bedroomBoolMain"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="numBedrooms">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Ventilation system *</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>7</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="ventBool"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="ventSystem">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>no system</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>exhaust ventilation</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>balanced ventilation</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Household and members</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <item>
+            <layout class="QFormLayout" name="formLayout_11">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Number of persons *</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QCheckBox" name="checkBox_14"/>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="numPersons">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>1</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QWidget" name="formWidget" native="true">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <layout class="QFormLayout" name="formLayout_6">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_15">
+                <property name="text">
+                 <string>Define employment type *</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QCheckBox" name="employmentBool"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_13">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Define bedroom assignment *</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <widget class="QCheckBox" name="bedroomBool">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_16">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                    <italic>true</italic>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>requires number of bedrooms ↑</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="peopleTable">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <column>
+              <property name="text">
+               <string>Member</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Employment</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Bedroom</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignTop">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Heating</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout_4">
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>Setpoint settings *</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <item>
+              <widget class="QCheckBox" name="heatSetpointBool"/>
+             </item>
+             <item>
+              <widget class="QComboBox" name="heatSetpoint">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>17    , 14 ,    15</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>18.5 , 15 ,    18.5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20    , 15 ,    19.5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20    , 11 ,    19.5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>20    , 14.5 , 15</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>21    , 20.5 , 21</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>21.5 , 15.5 , 21.5</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_17">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Heated rooms *</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QCheckBox" name="shroomsBool">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="shroomsWidget" native="true">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <layout class="QFormLayout" name="formLayout_5">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>dayzone</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>bathroom</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>nightzone</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="dayZone">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QCheckBox" name="bathroom">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QCheckBox" name="nightZone">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Advanced settings</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>390</width>
+             <height>1129</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QGroupBox" name="groupBox_5">
+              <property name="title">
+               <string>Occupancy and activity profiles</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <property name="leftMargin">
+                <number>20</number>
+               </property>
+               <item alignment="Qt::AlignTop">
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Occupancy profile</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <widget class="QRadioButton" name="occupAuto">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>auto</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="occupCustom">
+                   <property name="text">
+                    <string>custom</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="occupFile">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::TabFocus</enum>
+                   </property>
+                   <property name="text">
+                    <string>file</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="occProfileFile">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="occProfileFileDisp">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>no file</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="peopleTable2">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>200</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <column>
+                  <property name="text">
+                   <string>monday</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>tuesday</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>wednesday</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>thursday</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>friday</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>saturday</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>sunday</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="goToNumPersons">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>8</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string> change number of persons  ↩ </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_9">
+                 <property name="topMargin">
+                  <number>9</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_21">
+                   <property name="text">
+                    <string>Use file for activity profile *</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <item>
+                    <widget class="QCheckBox" name="actOnFile">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QToolButton" name="activProfileFile">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string>...</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="activProfileFileDisp">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string>no file</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="appGroup">
+              <property name="title">
+               <string>Appliances</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <property name="leftMargin">
+                <number>20</number>
+               </property>
+               <item>
+                <layout class="QFormLayout" name="formLayout_8">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_22">
+                   <property name="text">
+                    <string>Define present appliances *</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="appBool"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox_7">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="title">
+                  <string>Electricity</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout">
+                  <item row="2" column="4">
+                   <widget class="QLabel" name="label_33">
+                    <property name="text">
+                     <string>washing machine</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="4">
+                   <widget class="QLabel" name="label_34">
+                    <property name="text">
+                     <string>tumble dryer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="4">
+                   <widget class="QLabel" name="label_30">
+                    <property name="text">
+                     <string>fridge freezer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="4">
+                   <widget class="QLabel" name="label_32">
+                    <property name="text">
+                     <string>dish washer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QCheckBox" name="checkBox_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>printer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_40">
+                    <property name="text">
+                     <string>pc</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QLabel" name="label_38">
+                    <property name="text">
+                     <string>tv</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QSpinBox" name="spinBox_6">
+                    <property name="applianceName" stdset="0">
+                     <string>pc</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="3">
+                   <widget class="QSpinBox" name="spinBox_8">
+                    <property name="applianceName" stdset="0">
+                     <string>tv</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="4">
+                   <widget class="QLabel" name="label_39">
+                    <property name="text">
+                     <string>smartphone</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="5">
+                   <widget class="QSpinBox" name="spinBox_9">
+                    <property name="applianceName" stdset="0">
+                     <string>smartphone</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLabel" name="label_45">
+                    <property name="text">
+                     <string>freezer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLabel" name="label_46">
+                    <property name="text">
+                     <string>refrigerator</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLabel" name="label_47">
+                    <property name="text">
+                     <string>kettle</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_28">
+                    <property name="text">
+                     <string>vacuum</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLabel" name="label_37">
+                    <property name="text">
+                     <string>microwave</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_24">
+                    <property name="text">
+                     <string>HiFi</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_35">
+                    <property name="text">
+                     <string>printer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_42">
+                    <property name="text">
+                     <string>oven</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_36">
+                    <property name="text">
+                     <string>iron</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_43">
+                    <property name="text">
+                     <string>hob</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="5">
+                   <widget class="QCheckBox" name="checkBox_43">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>dish washer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="5">
+                   <widget class="QCheckBox" name="checkBox_44">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>washing machine</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="5">
+                   <widget class="QCheckBox" name="checkBox_45">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>tumble dryer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="3">
+                   <widget class="QCheckBox" name="checkBox_12">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>kettle</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="3">
+                   <widget class="QCheckBox" name="checkBox_11">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>freezer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="3">
+                   <widget class="QCheckBox" name="checkBox_40">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>refrigerator</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QCheckBox" name="checkBox_42">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>hob</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QCheckBox" name="checkBox_13">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>oven</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QCheckBox" name="checkBox_50">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>HiFi</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QCheckBox" name="checkBox_46">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>iron</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="5">
+                   <widget class="QCheckBox" name="checkBox_41">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>fridge freezer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QCheckBox" name="checkBox_51">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>vacuum</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QCheckBox" name="checkBox_47">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>microwave</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox_8">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="title">
+                  <string>Water</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_2">
+                  <item row="0" column="1">
+                   <widget class="QCheckBox" name="checkBox_17">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>bath</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="4">
+                   <widget class="QLabel" name="label_44">
+                    <property name="text">
+                     <string>dish washer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_49">
+                    <property name="text">
+                     <string>other flows</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QCheckBox" name="checkBox_16">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>shower</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_41">
+                    <property name="text">
+                     <string>shower</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_52">
+                    <property name="text">
+                     <string>bath</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="5">
+                   <widget class="QCheckBox" name="checkBox_8">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>dish washer</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QCheckBox" name="checkBox_7">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="applianceName" stdset="0">
+                     <string>other flow</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_9">
+              <property name="title">
+               <string>Window opening</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <property name="leftMargin">
+                <number>20</number>
+               </property>
+               <item>
+                <layout class="QFormLayout" name="formLayout_10">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_23">
+                   <property name="text">
+                    <string>Define window use habits *</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="habitsBool"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QFrame" name="formFrame_7">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_14">
+                  <item row="0" column="1">
+                   <widget class="QCheckBox" name="habitsGeneralBool"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_29">
+                    <property name="text">
+                     <string>•  in general</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignTop">
+                <widget class="QFrame" name="frame_2">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_7">
+                  <property name="leftMargin">
+                   <number>20</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_26">
+                    <property name="text">
+                     <string>household habit in winter</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="hhhabits">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>1</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>all closed</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>all shortly opened</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>day/night</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Bedr opened most</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>short/long presence</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_27">
+                    <property name="text">
+                     <string>seasonality coherence</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="seasonality">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>1</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>same as in winter</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>all opened more</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>dayzone opened more</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>nightzone opened more</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignTop">
+                <widget class="QFrame" name="formFrame_8">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <layout class="QFormLayout" name="formLayout_15">
+                  <item row="0" column="1">
+                   <widget class="QCheckBox" name="habitsDetailBool"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_53">
+                    <property name="text">
+                     <string>•  in detail</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QScrollArea" name="scrollArea_2">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>220</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="widgetResizable">
+                  <bool>true</bool>
+                 </property>
+                 <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>509</width>
+                    <height>192</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <item>
+                    <widget class="QFrame" name="formHabits">
+                     <layout class="QFormLayout" name="formLayout_12">
+                      <property name="leftMargin">
+                       <number>10</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="label_31">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>living room:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="label_56">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>kitchen:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_57">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>bedroom:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="0">
+                       <widget class="QLabel" name="label_55">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>bathroom:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="0">
+                       <widget class="QLabel" name="label_54">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>leaving:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="5" column="0">
+                       <widget class="QLabel" name="label_66">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>sleeping:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <layout class="QGridLayout" name="gridLayout_5">
+                        <item row="0" column="1">
+                         <widget class="QComboBox" name="comboBox_32">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open evening</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>closed when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_69">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_70">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QComboBox" name="comboBox_46">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open evening</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>closed when present</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item row="1" column="1">
+                       <layout class="QGridLayout" name="gridLayout_4">
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_50">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_48">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QComboBox" name="comboBox_42">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open after cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open evening</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QComboBox" name="comboBox_48">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open after cooking</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open evening</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item row="2" column="1">
+                       <layout class="QGridLayout" name="gridLayout_7">
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_73">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_74">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QComboBox" name="comboBox_43">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open before sleep</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QComboBox" name="comboBox_45">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open before sleep</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open during the day</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item row="3" column="1">
+                       <layout class="QGridLayout" name="gridLayout_8">
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_75">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QComboBox" name="comboBox_49">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open after present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>closed when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_76">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QComboBox" name="comboBox_50">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no habit</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always closed</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open after present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning short</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>always open</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>closed when present</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open morning long</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open night</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item row="4" column="1">
+                       <layout class="QGridLayout" name="gridLayout_6">
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_72">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QComboBox" name="comboBox_47">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no change</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close accessible</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all except bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open all</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_71">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QComboBox" name="comboBox_51">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no change</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close accessible</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all except bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open all</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item row="5" column="1">
+                       <layout class="QGridLayout" name="gridLayout_9">
+                        <item row="0" column="1">
+                         <widget class="QComboBox" name="comboBox_52">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no change</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close accessible</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all except bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open all</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_78">
+                          <property name="text">
+                           <string>winter</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="2">
+                         <widget class="QLabel" name="label_77">
+                          <property name="text">
+                           <string>summer</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="3">
+                         <widget class="QComboBox" name="comboBox_53">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>no change</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close accessible</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>close all except bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open bedroom</string>
+                           </property>
+                          </item>
+                          <item>
+                           <property name="text">
+                            <string>open all</string>
+                           </property>
+                          </item>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_19">
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>* When the user does not define a certain parameter himself, the model takes a random value based on integrated probabilities.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="indent">
+       <number>10</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QToolButton" name="fileOutNameButton">
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="outFileLabel">
+        <property name="text">
+         <string>out.txt</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="generateButton">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>generate file</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>727</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="exportConfig"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="helpDock">
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QTextBrowser" name="helpText"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="exportConfig">
+   <property name="text">
+    <string>Export parameters to .txt</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Show Docs</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>simLength</tabstop>
+  <tabstop>simYear</tabstop>
+  <tabstop>numBuildings</tabstop>
+  <tabstop>dwBool</tabstop>
+  <tabstop>dwType</tabstop>
+  <tabstop>constrYearBool</tabstop>
+  <tabstop>constrYear</tabstop>
+  <tabstop>bedroomBoolMain</tabstop>
+  <tabstop>numBedrooms</tabstop>
+  <tabstop>ventBool</tabstop>
+  <tabstop>ventSystem</tabstop>
+  <tabstop>checkBox_14</tabstop>
+  <tabstop>numPersons</tabstop>
+  <tabstop>employmentBool</tabstop>
+  <tabstop>peopleTable</tabstop>
+  <tabstop>heatSetpointBool</tabstop>
+  <tabstop>heatSetpoint</tabstop>
+  <tabstop>shroomsBool</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>occupAuto</tabstop>
+  <tabstop>occupCustom</tabstop>
+  <tabstop>occupFile</tabstop>
+  <tabstop>occProfileFile</tabstop>
+  <tabstop>peopleTable2</tabstop>
+  <tabstop>actOnFile</tabstop>
+  <tabstop>activProfileFile</tabstop>
+  <tabstop>appBool</tabstop>
+  <tabstop>checkBox_3</tabstop>
+  <tabstop>spinBox_6</tabstop>
+  <tabstop>spinBox_8</tabstop>
+  <tabstop>spinBox_9</tabstop>
+  <tabstop>habitsBool</tabstop>
+  <tabstop>habitsGeneralBool</tabstop>
+  <tabstop>hhhabits</tabstop>
+  <tabstop>seasonality</tabstop>
+  <tabstop>habitsDetailBool</tabstop>
+  <tabstop>comboBox_32</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>dwBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>dwType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>228</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>constrYearBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>constrYear</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>262</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bedroomBoolMain</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>numBedrooms</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ventBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ventSystem</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>318</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>382</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_14</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>numPersons</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>333</x>
+     <y>390</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_14</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>formWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>423</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_14</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>peopleTable</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>538</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>heatSetpointBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>heatSetpoint</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>663</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>668</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>occupCustom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>peopleTable2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actOnFile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>activProfileFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>232</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actOnFile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>activProfileFileDisp</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>appBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox_7</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>384</x>
+     <y>476</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>654</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>appBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox_8</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>384</x>
+     <y>476</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>734</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>habitsBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>formFrame_7</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>384</x>
+     <y>790</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>834</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>habitsBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>formFrame_8</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>384</x>
+     <y>790</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>948</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>habitsGeneralBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frame_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>376</x>
+     <y>822</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>908</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>habitsDetailBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>scrollArea_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>376</x>
+     <y>936</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>962</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>occupFile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>occProfileFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>occupFile</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>occProfileFileDisp</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>384</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shroomsBool</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>shroomsWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>721</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>754</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_14</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>peopleTable</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>554</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bedroomBoolMain</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_13</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bedroomBoolMain</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>bedroomBool</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>460</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bedroomBoolMain</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_16</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>250</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
