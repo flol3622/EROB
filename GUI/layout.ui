@@ -1493,7 +1493,7 @@
                     <x>0</x>
                     <y>0</y>
                     <width>509</width>
-                    <height>192</height>
+                    <height>201</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -2340,7 +2340,7 @@
       <item>
        <widget class="QLabel" name="outFileLabel">
         <property name="text">
-         <string>out.txt</string>
+         <string>results/</string>
         </property>
        </widget>
       </item>

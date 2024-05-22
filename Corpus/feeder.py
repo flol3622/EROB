@@ -46,7 +46,7 @@ class IDEAS_Feeder(object):
         # whereas the output is done later-on.
         cwd = os.getcwd()
         for i in range(self.nBui):
-            hou = residential.Household(str(self.name)+'_'+str(i), OccONFILE, ActONFILE, shtype, shrooms, members, apps, clusters, nbedr, BEDR, nday, year, i, npers, habits, HHhabit, SeCo, VentS, DW, YearBuilt)
+            hou = residential.Household(str(self.name)+'/Household_'+str(i), OccONFILE, ActONFILE, shtype, shrooms, members, apps, clusters, nbedr, BEDR, nday, year, i, npers, habits, HHhabit, SeCo, VentS, DW, YearBuilt)
             hou.simulate()
             hou.roundUp()
             os.chdir(path)
@@ -64,7 +64,7 @@ class IDEAS_Feeder(object):
         nday = self.nday
         dat = np.zeros(0)
         for i in range(self.nBui):
-            hou = cPickle.load(open(str(self.name)+'_'+str(i)+'.p','rb'))
+            hou = cPickle.load(open(str(self.name)+'/Household_'+str(i)+'.p','rb'))
             var = eval('hou.'+variable)
             if len(dat) != 0:
                 dat = np.vstack((dat,var))
@@ -83,7 +83,7 @@ class IDEAS_Feeder(object):
             hea ='#1 \n double data('+str(int(len(tim)))+','+str((self.nBui*11)+1)+')'
 
         directory = os.getcwd()
-        os.chdir(directory + '/Output')
+        os.chdir(self.name)
         np.savetxt(fname=variable+'.txt', X=dat.T, header=hea, comments='')
         os.chdir(directory)
 

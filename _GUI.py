@@ -1,11 +1,21 @@
 import os
 import sys
 
-from Corpus import feeder
 from PyQt6 import QtWidgets, uic
-from PyQt6.QtCore import QTimer, QUrl
-from PyQt6.QtWidgets import QCheckBox, QComboBox, QSpinBox, QTableWidgetItem, QWidget
+from PyQt6.QtCore import Qt, QTimer, QUrl
+from PyQt6.QtWidgets import (
+    QApplication,
+    QCheckBox,
+    QComboBox,
+    QFileDialog,
+    QMessageBox,
+    QSpinBox,
+    QTableWidgetItem,
+    QWidget,
+)
 from rich.pretty import pprint
+
+from Corpus import feeder
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -98,7 +108,7 @@ class Ui(QtWidgets.QMainWindow):
 
         # define output file
         self.outFileName = self.outFileLabel.text()
-        self.fileOutNameButton.clicked.connect(self.defineOutputFile)
+        self.fileOutNameButton.clicked.connect(self.defineOutputFolder)
 
         # generate output
         self.generateButton.clicked.connect(self.getParams)
@@ -127,7 +137,7 @@ class Ui(QtWidgets.QMainWindow):
         self.timer.start(500)
 
     def selectFile(self, lineEdit, ext, title="Open file"):
-        file, _ = QtWidgets.QFileDialog.getOpenFileName(
+        file, _ = QFileDialog.getOpenFileName(
             self, title, "", f"{ext} files (*.{ext});;All files (*)"
         )
         if file:
@@ -137,13 +147,13 @@ class Ui(QtWidgets.QMainWindow):
             elif "act" in title.lower():
                 self.actProfileFileName = file
 
-    def defineOutputFile(self):
-        file, _ = QtWidgets.QFileDialog.getSaveFileName(
-            self, "Save file", "", "Parameters files (*.p);;All files (*)"
+    def defineOutputFolder(self):
+        folder = QFileDialog.getExistingDirectory(
+            self, "Select output folder", "", QFileDialog.Option.ShowDirsOnly
         )
-        if file:
-            self.outFileLabel.setText(os.path.relpath(file))
-            self.outFileName = file
+        if folder:
+            self.outFileLabel.setText(os.path.relpath(folder))
+            self.outFileName = folder
 
     def getParams(self):
         params = {}
@@ -220,46 +230,74 @@ class Ui(QtWidgets.QMainWindow):
         habitsGen = self.habitsBool.isChecked() and self.habitsGeneralBool.isChecked()
         params["HHhabit"] = self.hhhabits.currentIndex() + 1 if habitsGen else -1
         params["SeCo"] = self.seasonality.currentIndex() + 1 if habitsGen else -1
-        # params["dataDir"] = os.path.join(base_dir, "Data")
-        params["dataDir"] = r"C:\Users\phili\Documents\scratch\EROB\Data"
 
         pprint(params)
         generateParams(params)
 
 
 def generateParams(params):
-    # os.chdir('..')
+    dialog = QMessageBox()
+    dialog.setWindowTitle("Processing")
+    dialog.setText("Processing data. Please wait...")
+    dialog.setStandardButtons(QMessageBox.StandardButton.NoButton)
+    dialog.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.WindowStaysOnTopHint)
+    dialog.show()
+    
+    QTimer.singleShot(100, lambda: process_data(params, dialog))
+
+def process_data(params, dialog):
+    # Change to the 'Data' directory to perform operations
     directory = os.getcwd()
-    print (directory)
-    os.chdir(directory + '/Data')
-    d = os.getcwd()
-    feeder.IDEAS_Feeder(
-        params["name"],
-        params["nBui"],
-        d,
-        params["OccONFILE"],
-        params["ActONFILE"],
-        params["shtype"],
-        params["shrooms"],
-        params["members"],
-        params["apps"],
-        params["clusters"],
-        params["nbedr"],
-        params["BEDR"],
-        params["nday"],
-        params["year"],
-        params["npers"],
-        params["habits"],
-        params["HHhabit"],
-        params["SeCo"],
-        params["VentS"],
-        params["DW"],
-        params["YearBuilt"],
-    )
+    os.chdir(os.path.join(directory, "Data"))
+    data_directory = os.getcwd()
+
+    outFileFolder = params["name"]
+    if not os.path.isabs(outFileFolder):
+        outFileFolder = os.path.join(directory, outFileFolder)
+    if not os.path.exists(outFileFolder):
+        os.makedirs(outFileFolder)
+
+
+    try:
+        feeder.IDEAS_Feeder(
+            outFileFolder,
+            params["nBui"],
+            data_directory,
+            params["OccONFILE"],
+            params["ActONFILE"],
+            params["shtype"],
+            params["shrooms"],
+            params["members"],
+            params["apps"],
+            params["clusters"],
+            params["nbedr"],
+            params["BEDR"],
+            params["nday"],
+            params["year"],
+            params["npers"],
+            params["habits"],
+            params["HHhabit"],
+            params["SeCo"],
+            params["VentS"],
+            params["DW"],
+            params["YearBuilt"],
+        )
+        dialog.accept()
+        QMessageBox.information(None, "Success", "Data processing completed successfully.")
+    except Exception as e:
+        dialog.accept()
+        print(e)
+        error_dialog = QMessageBox()
+        error_dialog.setWindowTitle("Error")
+        error_dialog.setText("An error occurred: Please refer to the console for more details.")
+        error_dialog.setStandardButtons(QMessageBox.StandardButton.Ok)
+        error_dialog.exec()
+
+    os.chdir(directory)
 
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     window = Ui()
     window.setWindowTitle("EROB gui")
     sys.exit(app.exec())

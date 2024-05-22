@@ -10,4 +10,7 @@ build/
 **/duration.txt
 Data/InputFiles/*.txt
 !Data/InputFiles/empty.txt
+results/
+*.exe
+
 
